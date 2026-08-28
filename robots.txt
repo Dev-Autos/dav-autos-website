@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dev-autos.github.io/dav-autos-website/sitemap.xml
