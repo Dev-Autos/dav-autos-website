@@ -371,6 +371,32 @@ img{max-width:100%;}
 }
 @media (min-width:768px){.mobile-menu-btn{display:none!important;}}
 
+
+/* Investment plan selector + investor checkout */
+.investment-plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:36px;}
+.plan-card{position:relative;background:#fff;border:2px solid rgba(93,58,26,.09);border-radius:18px;padding:20px;cursor:pointer;transition:.22s ease;box-shadow:0 8px 25px rgba(61,35,20,.05);}
+.plan-card:hover{transform:translateY(-3px);border-color:rgba(245,166,35,.6);}
+.plan-card.selected{border-color:var(--gold);box-shadow:0 12px 30px rgba(245,166,35,.18);}
+.plan-card input{position:absolute;opacity:0;pointer-events:none;}
+.plan-amount{font-size:1.35rem;font-weight:800;color:var(--brown);}
+.plan-return{margin-top:8px;color:var(--gray);font-size:.9rem;line-height:1.5;}
+.plan-return strong{display:block;color:var(--gold);font-size:1.05rem;margin-top:3px;}
+.plan-badge{position:absolute;right:12px;top:12px;font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;background:rgba(245,166,35,.12);color:var(--brown);padding:5px 8px;border-radius:999px;}
+.checkout-box{margin:42px auto 0;max-width:1000px;background:#fff;border:1px solid rgba(93,58,26,.1);border-radius:24px;padding:30px;box-shadow:0 15px 45px rgba(61,35,20,.08);}
+.checkout-box h3{color:var(--brown);font-size:1.55rem;margin-bottom:8px;}
+.checkout-intro{color:var(--gray);line-height:1.65;margin-bottom:22px;}
+.selected-plan{background:var(--cream);border-radius:14px;padding:15px 17px;margin-bottom:22px;display:flex;justify-content:space-between;gap:15px;align-items:center;}
+.selected-plan span{color:var(--gray);font-size:.85rem;}.selected-plan strong{color:var(--brown);font-size:1.05rem;}
+.investor-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;}
+.form-field{display:flex;flex-direction:column;gap:7px;}.form-field.full{grid-column:1/-1;}
+.form-field label{font-size:.8rem;font-weight:700;color:var(--brown);}.form-field input,.form-field select{width:100%;border:1px solid #ddd5cc;border-radius:11px;padding:13px 14px;font:inherit;background:#fff;outline:none;}
+.form-field input:focus,.form-field select:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(245,166,35,.12);}
+.payment-choice{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px;}.payment-choice label{display:block;}.payment-choice input{position:absolute;opacity:0;}.payment-option{display:block;border:1px solid #ddd5cc;border-radius:12px;padding:14px;text-align:center;font-weight:800;color:var(--brown);cursor:pointer;}.payment-choice input:checked + .payment-option{border-color:var(--gold);background:rgba(245,166,35,.08);}
+.checkout-actions{margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;}.pay-button{border:0;cursor:pointer;background:var(--gold);color:#fff;padding:14px 22px;border-radius:999px;font-weight:800;font:inherit;}.pay-button:hover{background:var(--brown);}.whatsapp-small{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 20px;border-radius:999px;text-decoration:none;font-weight:800;color:#fff;background:#25D366;}
+.checkout-legal{margin-top:15px;color:#777;font-size:.72rem;line-height:1.55;}
+@media(max-width:900px){.investment-plans{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:600px){.investment-plans{grid-template-columns:1fr;gap:11px;margin-top:24px;}.plan-card{padding:17px;}.plan-amount{font-size:1.15rem;}.plan-return{font-size:.82rem;}.checkout-box{padding:20px 16px;border-radius:18px;margin-top:28px;}.investor-form{grid-template-columns:1fr;gap:13px;}.form-field.full{grid-column:auto;}.payment-choice{grid-template-columns:1fr;}.checkout-actions{flex-direction:column;}.pay-button,.whatsapp-small{width:100%;min-height:50px;}.selected-plan{align-items:flex-start;flex-direction:column;gap:5px;}}
+
 </style>
 </head>
 <body>
@@ -433,6 +459,57 @@ img{max-width:100%;}
         <h2 class="section-title">Build With DAV AUTOS</h2>
         <p class="section-desc">Choose an area you would like to discuss. Specific opportunities, requirements and commercial terms are provided directly by DAV AUTOS.</p>
       </div>
+      <div class="investment-plans" id="investmentPlans" aria-label="Investment plans">
+        <label class="plan-card" data-amount="100000" data-return="5000"><input type="radio" name="investmentPlan" value="100000"><span class="plan-badge">Popular</span><div class="plan-amount">₦100,000</div><div class="plan-return">Stated monthly payout<strong>₦5,000 / month</strong></div></label>
+        <label class="plan-card" data-amount="200000" data-return="10000"><input type="radio" name="investmentPlan" value="200000"><span class="plan-badge"></span><div class="plan-amount">₦200,000</div><div class="plan-return">Stated monthly payout<strong>₦10,000 / month</strong></div></label>
+        <label class="plan-card" data-amount="300000" data-return="15000"><input type="radio" name="investmentPlan" value="300000"><span class="plan-badge"></span><div class="plan-amount">₦300,000</div><div class="plan-return">Stated monthly payout<strong>₦15,000 / month</strong></div></label>
+        <label class="plan-card" data-amount="400000" data-return="20000"><input type="radio" name="investmentPlan" value="400000"><span class="plan-badge"></span><div class="plan-amount">₦400,000</div><div class="plan-return">Stated monthly payout<strong>₦20,000 / month</strong></div></label>
+        <label class="plan-card" data-amount="500000" data-return="25000"><input type="radio" name="investmentPlan" value="500000"><span class="plan-badge"></span><div class="plan-amount">₦500,000</div><div class="plan-return">Stated monthly payout<strong>₦25,000 / month</strong></div></label>
+        <label class="plan-card" data-amount="600000" data-return="30000"><input type="radio" name="investmentPlan" value="600000"><span class="plan-badge"></span><div class="plan-amount">₦600,000</div><div class="plan-return">Stated monthly payout<strong>₦30,000 / month</strong></div></label>
+        <label class="plan-card" data-amount="1000000" data-return="50000"><input type="radio" name="investmentPlan" value="1000000"><span class="plan-badge">Popular</span><div class="plan-amount">₦1,000,000</div><div class="plan-return">Stated monthly payout<strong>₦50,000 / month</strong></div></label>
+        <label class="plan-card" data-amount="2000000" data-return="100000"><input type="radio" name="investmentPlan" value="2000000"><span class="plan-badge"></span><div class="plan-amount">₦2,000,000</div><div class="plan-return">Stated monthly payout<strong>₦100,000 / month</strong></div></label>
+        <label class="plan-card" data-amount="3000000" data-return="150000"><input type="radio" name="investmentPlan" value="3000000"><span class="plan-badge"></span><div class="plan-amount">₦3,000,000</div><div class="plan-return">Stated monthly payout<strong>₦150,000 / month</strong></div></label>
+        <label class="plan-card" data-amount="4000000" data-return="200000"><input type="radio" name="investmentPlan" value="4000000"><span class="plan-badge"></span><div class="plan-amount">₦4,000,000</div><div class="plan-return">Stated monthly payout<strong>₦200,000 / month</strong></div></label>
+        <label class="plan-card" data-amount="5000000" data-return="250000"><input type="radio" name="investmentPlan" value="5000000"><span class="plan-badge">Popular</span><div class="plan-amount">₦5,000,000</div><div class="plan-return">Stated monthly payout<strong>₦250,000 / month</strong></div></label>
+        <label class="plan-card" data-amount="6000000" data-return="300000"><input type="radio" name="investmentPlan" value="6000000"><span class="plan-badge"></span><div class="plan-amount">₦6,000,000</div><div class="plan-return">Stated monthly payout<strong>₦300,000 / month</strong></div></label>
+        <label class="plan-card" data-amount="10000000" data-return="500000"><input type="radio" name="investmentPlan" value="10000000"><span class="plan-badge"></span><div class="plan-amount">₦10,000,000</div><div class="plan-return">Stated monthly payout<strong>₦500,000 / month</strong></div></label>
+        <label class="plan-card" data-amount="15000000" data-return="750000"><input type="radio" name="investmentPlan" value="15000000"><span class="plan-badge"></span><div class="plan-amount">₦15,000,000</div><div class="plan-return">Stated monthly payout<strong>₦750,000 / month</strong></div></label>
+        <label class="plan-card" data-amount="20000000" data-return="1000000"><input type="radio" name="investmentPlan" value="20000000"><span class="plan-badge"></span><div class="plan-amount">₦20,000,000</div><div class="plan-return">Stated monthly payout<strong>₦1,000,000 / month</strong></div></label>
+        <label class="plan-card" data-amount="25000000" data-return="1250000"><input type="radio" name="investmentPlan" value="25000000"><span class="plan-badge"></span><div class="plan-amount">₦25,000,000</div><div class="plan-return">Stated monthly payout<strong>₦1,250,000 / month</strong></div></label>
+        <label class="plan-card" data-amount="30000000" data-return="1500000"><input type="radio" name="investmentPlan" value="30000000"><span class="plan-badge"></span><div class="plan-amount">₦30,000,000</div><div class="plan-return">Stated monthly payout<strong>₦1,500,000 / month</strong></div></label>
+        <label class="plan-card" data-amount="35000000" data-return="1750000"><input type="radio" name="investmentPlan" value="35000000"><span class="plan-badge"></span><div class="plan-amount">₦35,000,000</div><div class="plan-return">Stated monthly payout<strong>₦1,750,000 / month</strong></div></label>
+        <label class="plan-card" data-amount="40000000" data-return="2000000"><input type="radio" name="investmentPlan" value="40000000"><span class="plan-badge"></span><div class="plan-amount">₦40,000,000</div><div class="plan-return">Stated monthly payout<strong>₦2,000,000 / month</strong></div></label>
+        <label class="plan-card" data-amount="45000000" data-return="2250000"><input type="radio" name="investmentPlan" value="45000000"><span class="plan-badge"></span><div class="plan-amount">₦45,000,000</div><div class="plan-return">Stated monthly payout<strong>₦2,250,000 / month</strong></div></label>
+        <label class="plan-card" data-amount="50000000" data-return="2500000"><input type="radio" name="investmentPlan" value="50000000"><span class="plan-badge"></span><div class="plan-amount">₦50,000,000</div><div class="plan-return">Stated monthly payout<strong>₦2,500,000 / month</strong></div></label>
+        <label class="plan-card" data-amount="55000000" data-return="2750000"><input type="radio" name="investmentPlan" value="55000000"><span class="plan-badge"></span><div class="plan-amount">₦55,000,000</div><div class="plan-return">Stated monthly payout<strong>₦2,750,000 / month</strong></div></label>
+        <label class="plan-card" data-amount="60000000" data-return="3000000"><input type="radio" name="investmentPlan" value="60000000"><span class="plan-badge"></span><div class="plan-amount">₦60,000,000</div><div class="plan-return">Stated monthly payout<strong>₦3,000,000 / month</strong></div></label>
+        <label class="plan-card" data-amount="65000000" data-return="3250000"><input type="radio" name="investmentPlan" value="65000000"><span class="plan-badge"></span><div class="plan-amount">₦65,000,000</div><div class="plan-return">Stated monthly payout<strong>₦3,250,000 / month</strong></div></label>
+        <label class="plan-card" data-amount="70000000" data-return="3500000"><input type="radio" name="investmentPlan" value="70000000"><span class="plan-badge"></span><div class="plan-amount">₦70,000,000</div><div class="plan-return">Stated monthly payout<strong>₦3,500,000 / month</strong></div></label>
+        <label class="plan-card" data-amount="75000000" data-return="3750000"><input type="radio" name="investmentPlan" value="75000000"><span class="plan-badge"></span><div class="plan-amount">₦75,000,000</div><div class="plan-return">Stated monthly payout<strong>₦3,750,000 / month</strong></div></label>
+        <label class="plan-card" data-amount="80000000" data-return="4000000"><input type="radio" name="investmentPlan" value="80000000"><span class="plan-badge"></span><div class="plan-amount">₦80,000,000</div><div class="plan-return">Stated monthly payout<strong>₦4,000,000 / month</strong></div></label>
+        <label class="plan-card" data-amount="85000000" data-return="4250000"><input type="radio" name="investmentPlan" value="85000000"><span class="plan-badge"></span><div class="plan-amount">₦85,000,000</div><div class="plan-return">Stated monthly payout<strong>₦4,250,000 / month</strong></div></label>
+        <label class="plan-card" data-amount="90000000" data-return="4500000"><input type="radio" name="investmentPlan" value="90000000"><span class="plan-badge"></span><div class="plan-amount">₦90,000,000</div><div class="plan-return">Stated monthly payout<strong>₦4,500,000 / month</strong></div></label>
+        <label class="plan-card" data-amount="95000000" data-return="4750000"><input type="radio" name="investmentPlan" value="95000000"><span class="plan-badge"></span><div class="plan-amount">₦95,000,000</div><div class="plan-return">Stated monthly payout<strong>₦4,750,000 / month</strong></div></label>
+        <label class="plan-card" data-amount="100000000" data-return="5000000"><input type="radio" name="investmentPlan" value="100000000"><span class="plan-badge"></span><div class="plan-amount">₦100,000,000</div><div class="plan-return">Stated monthly payout<strong>₦5,000,000 / month</strong></div></label>
+      </div>
+
+      <div class="checkout-box" id="investorCheckout">
+        <h3>Choose a plan and continue</h3>
+        <p class="checkout-intro">Select the investment amount you are comfortable with, then enter your details. Your selected plan is carried into the payment step.</p>
+        <div class="selected-plan"><span>Selected investment</span><strong id="selectedPlanText">No plan selected</strong></div>
+        <form class="investor-form" id="investorForm">
+          <div class="form-field"><label for="fullName">Full name</label><input id="fullName" name="fullName" required autocomplete="name" placeholder="Your full name"></div>
+          <div class="form-field"><label for="email">Email address</label><input id="email" name="email" type="email" required autocomplete="email" placeholder="you@example.com"></div>
+          <div class="form-field"><label for="phone">Phone number</label><input id="phone" name="phone" type="tel" required autocomplete="tel" placeholder="080..." ></div>
+          <div class="form-field"><label for="state">State</label><input id="state" name="state" required autocomplete="address-level1" placeholder="Lagos, Ogun, etc."></div>
+          <div class="form-field full"><label for="address">Address</label><input id="address" name="address" required autocomplete="street-address" placeholder="Your address"></div>
+          <div class="form-field full"><label>Payment portal</label><div class="payment-choice"><label><input type="radio" name="paymentMethod" value="paystack" checked><span class="payment-option">Paystack</span></label><label><input type="radio" name="paymentMethod" value="selar"><span class="payment-option">Selar</span></label></div></div>
+          <div class="form-field full"><label><input type="checkbox" id="terms" required> I confirm that I have reviewed the investment terms and understand that the stated payout and withdrawal conditions are subject to the final written agreement.</label></div>
+          <div class="form-field full checkout-actions"><button class="pay-button" type="submit"><i class="fas fa-lock"></i> Continue to Payment</button><a class="whatsapp-small" href="https://wa.me/2348031418977?text=Hello%20DAV%20AUTOS%2C%20I%20want%20to%20make%20an%20investment%20and%20need%20payment%20details." target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> Need Help?</a></div>
+        </form>
+        <p class="checkout-legal">Important: the figures displayed here are the investment terms supplied for this page and should not be treated as a guaranteed return until confirmed in a signed agreement. Withdrawal timing, payout timing, eligibility, fees and all other conditions should be stated clearly in the final agreement. A static HTML page cannot securely process payments or send verified receipts by itself; connect the form to your approved Paystack/Selar checkout and a secure backend before going live.</p>
+      </div>
+
       <div class="investment-grid">
         <div class="investment-card"><div class="investment-icon"><i class="fas fa-car-side"></i></div><h3>Fleet Expansion</h3><p>Discuss opportunities connected to adding vehicles to rental and transportation operations.</p></div>
         <div class="investment-card"><div class="investment-icon"><i class="fas fa-chart-line"></i></div><h3>Rental Operations</h3><p>Explore partnership opportunities around vehicle rentals and dependable transport solutions.</p></div>
@@ -461,6 +538,32 @@ img{max-width:100%;}
 window.addEventListener('scroll',()=>{const n=document.getElementById('navbar');n.classList.toggle('scrolled',window.scrollY>50);});
 function toggleMobileMenu(){const m=document.getElementById('mobileMenu');const open=m.classList.toggle('active');m.setAttribute('aria-hidden',String(!open));document.body.style.overflow=open?'hidden':'';}
 document.querySelectorAll('#mobileMenu a').forEach(a=>a.addEventListener('click',()=>{const m=document.getElementById('mobileMenu');m.classList.remove('active');m.setAttribute('aria-hidden','true');document.body.style.overflow='';}));
+
+const planCards=[...document.querySelectorAll('.plan-card')];
+const selectedPlanText=document.getElementById('selectedPlanText');
+planCards.forEach(card=>{
+  card.addEventListener('click',()=>{
+    planCards.forEach(c=>c.classList.remove('selected'));
+    card.classList.add('selected');
+    card.querySelector('input').checked=true;
+    selectedPlanText.textContent='₦'+Number(card.dataset.amount).toLocaleString('en-NG')+' investment — ₦'+Number(card.dataset.return).toLocaleString('en-NG')+' stated monthly payout';
+    document.getElementById('investorCheckout').scrollIntoView({behavior:'smooth',block:'start'});
+  });
+});
+
+document.getElementById('investorForm').addEventListener('submit',(e)=>{
+  e.preventDefault();
+  const selected=document.querySelector('input[name="investmentPlan"]:checked');
+  if(!selected){alert('Please select an investment amount first.');document.getElementById('investmentPlans').scrollIntoView({behavior:'smooth'});return;}
+  const method=document.querySelector('input[name="paymentMethod"]:checked').value;
+  // Replace these placeholders with your verified gateway checkout URLs or a secure backend endpoint.
+  const paymentUrls={paystack:'YOUR_PAYSTACK_CHECKOUT_URL',selar:'YOUR_SELAR_CHECKOUT_URL'};
+  if(paymentUrls[method].startsWith('YOUR_')){
+    alert('The '+(method==='paystack'?'Paystack':'Selar')+' payment portal is not connected yet. The customer details and selected plan are ready; connect the approved checkout URL/backend before accepting payments.');
+    return;
+  }
+  window.location.href=paymentUrls[method];
+});
 </script>
 </body>
 </html>
