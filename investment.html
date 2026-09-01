@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Investment & Partnership | DAV AUTOS ENTERPRISE</title>
+<meta name="description" content="Explore investment and partnership opportunities with DAV AUTOS ENTERPRISE. Enquiries are handled directly on WhatsApp.">
+<link rel="icon" type="image/png" sizes="32x32" href="./logo.png">
+<link rel="shortcut icon" href="./logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+
+        .navbar { position:fixed; top:0; left:0; right:0; z-index:1000; background:rgba(255,255,255,.95); backdrop-filter:blur(20px); padding:15px 0; box-shadow:0 2px 30px rgba(0,0,0,.08); transition:all .3s ease; }
+        .navbar.scrolled { padding:10px 0; box-shadow:0 4px 40px rgba(0,0,0,.12); }
+        .nav-container { max-width:1300px; margin:0 auto; padding:0 30px; display:flex; align-items:center; justify-content:space-between; }
+        .logo-section { display:flex; align-items:center; gap:12px; }
+        .logo-img { width:55px; height:55px; border-radius:50%; object-fit:cover; border:3px solid var(--gold); box-shadow:0 4px 15px rgba(245,166,35,.3); }
+        .logo-text { display:flex; flex-direction:column; }
+        .logo-title { font-size:1.3rem; font-weight:800; color:var(--brown); letter-spacing:1px; line-height:1.1; }
+        .logo-sub { font-size:.65rem; color:var(--gold); font-weight:600; letter-spacing:2px; text-transform:uppercase; }
+        .nav-links { display:flex; gap:28px; list-style:none; align-items:center; }
+        .nav-links a { text-decoration:none; color:var(--brown); font-weight:600; font-size:.9rem; position:relative; padding:5px 0; transition:color .3s; }
+        .nav-links a::after { content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background:var(--gold); transition:width .3s ease; }
+        .nav-links a:hover { color:var(--gold); } .nav-links a:hover::after { width:100%; }
+        .nav-cta { background:var(--gold); color:var(--white)!important; padding:10px 25px!important; border-radius:30px; font-weight:700!important; box-shadow:0 4px 15px rgba(245,166,35,.4); }
+        .nav-cta::after { display:none!important; }
+        .nav-cta:hover { background:var(--brown)!important; }
+:root {
+            --gold: #F5A623;
+            --gold-light: #FFD700;
+            --brown: #5D3A1A;
+            --brown-dark: #3D2314;
+            --brown-light: #8B6914;
+            --cream: #FFF8F0;
+            --white: #FFFFFF;
+            --dark: #1A1A1A;
+            --gray: #6B7280;
+            --light-gray: #F3F4F6;
+        }
+
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+html {
+            scroll-behavior: smooth;
+        }
+
+body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--cream);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+.container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+.section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+.section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+.section-label {
+            display: inline-block;
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+.section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--brown);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+.section-desc {
+            color: var(--gray);
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+.investment-section {
+            background: linear-gradient(135deg, #fffaf2 0%, #ffffff 55%, #f8efe3 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+.investment-section::before {
+            content: '';
+            position: absolute;
+            width: 420px;
+            height: 420px;
+            border-radius: 50%;
+            background: rgba(245,166,35,0.08);
+            top: -180px;
+            right: -140px;
+        }
+
+.investment-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+            margin-top: 45px;
+            position: relative;
+            z-index: 1;
+        }
+
+.investment-card {
+            background: rgba(255,255,255,0.94);
+            border: 1px solid rgba(93,58,26,0.1);
+            border-radius: 22px;
+            padding: 32px 28px;
+            box-shadow: 0 12px 40px rgba(61,35,20,0.07);
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+
+.investment-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(61,35,20,0.12);
+        }
+
+.investment-icon {
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: rgba(245,166,35,0.14);
+            color: var(--brown);
+            font-size: 1.35rem;
+            margin-bottom: 20px;
+        }
+
+.investment-card h3 {
+            color: var(--brown);
+            margin-bottom: 12px;
+            font-size: 1.25rem;
+        }
+
+.investment-card p {
+            color: var(--gray);
+            line-height: 1.75;
+            font-size: .98rem;
+        }
+
+.investment-cta {
+            margin: 38px auto 0;
+            max-width: 900px;
+            background: var(--brown-dark);
+            color: var(--white);
+            border-radius: 24px;
+            padding: 34px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 18px 55px rgba(61,35,20,0.16);
+        }
+
+.investment-cta h3 {
+            font-size: clamp(1.35rem, 3vw, 2rem);
+            margin-bottom: 10px;
+        }
+
+.investment-cta p {
+            color: rgba(255,255,255,.78);
+            max-width: 680px;
+            margin: 0 auto 22px;
+            line-height: 1.7;
+        }
+
+.investment-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: #25D366;
+            color: #fff;
+            padding: 14px 26px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+
+.investment-whatsapp:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(37,211,102,.25);
+        }
+
+.investment-note {
+            margin-top: 18px;
+            color: rgba(255,255,255,.58);
+            font-size: .78rem;
+            line-height: 1.6;
+        }
+
+.footer {
+            background: var(--dark);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+
+.footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+.footer-logo img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 2px solid var(--gold);
+        }
+
+.footer-logo span {
+            color: var(--white);
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+
+.heart {
+            color: var(--gold);
+        }
+
+.toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: var(--brown);
+            color: var(--white);
+            padding: 15px 30px;
+            border-radius: 12px;
+            font-weight: 600;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            z-index: 9999;
+            opacity: 0;
+            transition: all 0.4s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+
+        .investment-page { min-height: 100vh; padding-top: 110px; }
+        .back-home { display:inline-flex; align-items:center; gap:8px; margin-top:28px; text-decoration:none; color:var(--brown); font-weight:700; }
+        .back-home:hover { color:var(--gold); }
+        @media (max-width: 900px) { .nav-links { gap:16px; } .nav-links li:nth-child(6), .nav-links li:nth-child(7) { display:none; } }
+        @media (max-width: 768px) { .nav-container { padding:0 18px; } .logo-img { width:48px; height:48px; } .logo-title { font-size:1.05rem; } .nav-links { gap:12px; } .nav-links li:nth-child(n+4) { display:none; } .investment-page { padding-top:90px; } .investment-grid { grid-template-columns:1fr !important; } }
+
+
+        .investment-hero { padding: 70px 0 40px; background: radial-gradient(circle at 85% 20%, rgba(245,166,35,.18), transparent 32%), linear-gradient(135deg,#3d2314,#5d3a1a 55%,#2a180f); color:#fff; position:relative; overflow:hidden; }
+        .investment-hero::after { content:""; position:absolute; width:520px; height:520px; border:1px solid rgba(255,255,255,.12); border-radius:50%; right:-180px; top:-220px; }
+        .investment-hero-content { max-width:900px; margin:auto; text-align:center; position:relative; z-index:1; }
+        .investment-hero .section-label { color:var(--gold-light); }
+        .investment-hero h1 { color:#fff; font-family:'Playfair Display',serif; font-size:clamp(2.4rem,6vw,4.4rem); margin-bottom:18px; }
+        .investment-hero p { max-width:720px; margin:0 auto 28px; color:rgba(255,255,255,.78); line-height:1.8; font-size:1.05rem; }
+        .hero-investment-actions { display:flex; justify-content:center; gap:14px; flex-wrap:wrap; }
+        .hero-investment-actions a { text-decoration:none; display:inline-flex; align-items:center; gap:9px; padding:14px 24px; border-radius:50px; font-weight:700; transition:.25s ease; }
+        .hero-investment-actions .primary { background:var(--gold); color:#fff; box-shadow:0 10px 30px rgba(245,166,35,.28); }
+        .hero-investment-actions .primary:hover { transform:translateY(-3px); }
+        .hero-investment-actions .secondary { color:#fff; border:1px solid rgba(255,255,255,.35); }
+        .hero-investment-actions .secondary:hover { border-color:var(--gold); color:var(--gold-light); }
+        .investment-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; max-width:900px; margin:35px auto 0; }
+        .investment-stat { padding:20px; border:1px solid rgba(255,255,255,.12); border-radius:18px; background:rgba(255,255,255,.05); backdrop-filter:blur(8px); }
+        .investment-stat strong { display:block; font-size:1.55rem; color:var(--gold-light); margin-bottom:5px; }
+        .investment-stat span { color:rgba(255,255,255,.68); font-size:.84rem; }
+        .investment-steps { margin:55px auto 0; max-width:1000px; display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+        .step { text-align:center; padding:24px; border-radius:20px; background:#fff; border:1px solid rgba(93,58,26,.08); box-shadow:0 10px 30px rgba(61,35,20,.06); }
+        .step-number { width:42px; height:42px; margin:0 auto 14px; border-radius:50%; display:grid; place-items:center; background:var(--gold); color:#fff; font-weight:800; }
+        .step h3 { color:var(--brown); margin-bottom:8px; }
+        .step p { color:var(--gray); font-size:.9rem; line-height:1.65; }
+        @media(max-width:768px){ .investment-stats,.investment-steps{grid-template-columns:1fr;} .investment-hero{padding:45px 0 30px;} }
+
+</style>
+</head>
+<body>
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a class="logo-section" href="dav-autos-investment-section.html" style="text-decoration:none;">
+      <img src="./logo.png" alt="DAV AUTOS Logo" class="logo-img">
+      <div class="logo-text"><span class="logo-title">DAV AUTOS</span><span class="logo-sub">Enterprise</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="investment.html" style="color:var(--gold);">Investment</a></li>
+      <li><a href="dav-autos-investment-section.html">Home</a></li>
+      <li><a href="dav-autos-investment-section.html#services">Services</a></li>
+      <li><a href="dav-autos-investment-section.html#rentals">Rentals</a></li>
+      <li><a href="dav-autos-investment-section.html#maintenance">Maintenance</a></li>
+      <li><a href="dav-autos-investment-section.html#contact">Contact</a></li>
+      <li><a href="tel:08031418977" class="nav-cta"><i class="fas fa-phone"></i> Call Now</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="investment-page">
+  <section class="investment-hero">
+    <div class="container investment-hero-content">
+      <span class="section-label">DAV AUTOS ENTERPRISE</span>
+      <h1>Investment &amp; Partnership</h1>
+      <p>Explore opportunities to grow with DAV AUTOS through fleet expansion, rental operations and automotive services. Start a conversation with our team to learn about current opportunities and requirements.</p>
+      <div class="hero-investment-actions">
+        <a class="primary" href="https://wa.me/2348031418977?text=Hello%20DAV%20AUTOS%2C%20I%20am%20interested%20in%20the%20investment%20opportunity.%20Please%20send%20me%20the%20current%20investment%20and%20partnership%20details." target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> Discuss on WhatsApp</a>
+        <a class="secondary" href="dav-autos-investment-section.html"><i class="fas fa-arrow-left"></i> Back to Website</a>
+      </div>
+      <div class="investment-stats">
+        <div class="investment-stat"><strong>Fleet</strong><span>Vehicle growth opportunities</span></div>
+        <div class="investment-stat"><strong>Rental</strong><span>Transport business opportunities</span></div>
+        <div class="investment-stat"><strong>Services</strong><span>Automotive expansion opportunities</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section investment-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Where You Can Participate</span>
+        <h2 class="section-title">Build With DAV AUTOS</h2>
+        <p class="section-desc">Choose an area you would like to discuss. Specific opportunities, requirements and commercial terms are provided directly by DAV AUTOS.</p>
+      </div>
+      <div class="investment-grid">
+        <div class="investment-card"><div class="investment-icon"><i class="fas fa-car-side"></i></div><h3>Fleet Expansion</h3><p>Discuss opportunities connected to adding vehicles to rental and transportation operations.</p></div>
+        <div class="investment-card"><div class="investment-icon"><i class="fas fa-chart-line"></i></div><h3>Rental Operations</h3><p>Explore partnership opportunities around vehicle rentals and dependable transport solutions.</p></div>
+        <div class="investment-card"><div class="investment-icon"><i class="fas fa-tools"></i></div><h3>Automotive Services</h3><p>Ask about opportunities connected to maintenance, servicing and future business expansion.</p></div>
+      </div>
+
+      <div class="investment-steps">
+        <div class="step"><div class="step-number">1</div><h3>Send an Enquiry</h3><p>Tell us what type of investment or partnership you are interested in.</p></div>
+        <div class="step"><div class="step-number">2</div><h3>Get the Details</h3><p>Our team will explain the current opportunity, requirements and available options.</p></div>
+        <div class="step"><div class="step-number">3</div><h3>Discuss Next Steps</h3><p>Review the information with our team before deciding whether to proceed.</p></div>
+      </div>
+
+      <div class="investment-cta">
+        <h3>Ready to Start the Conversation?</h3>
+        <p>Investment enquiries are handled directly on WhatsApp so we can provide the most current information and answer your questions.</p>
+        <a class="investment-whatsapp" href="https://wa.me/2348031418977?text=Hello%20DAV%20AUTOS%2C%20I%20am%20interested%20in%20the%20investment%20opportunity.%20Please%20send%20me%20the%20current%20investment%20and%20partnership%20details." target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> Enquire on WhatsApp</a>
+        <div class="investment-note">Investment terms, availability and any applicable agreements are discussed directly with DAV AUTOS. This page does not promise fixed returns or guaranteed profits.</div>
+      </div>
+      <a class="back-home" href="dav-autos-investment-section.html"><i class="fas fa-arrow-left"></i> Back to DAV AUTOS</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer"><div class="footer-content"><div class="footer-logo"><img src="./logo.png" alt="DAV AUTOS Logo"><span>DAV AUTOS ENTERPRISE</span></div><p>Thank you for choosing our Brand ☺️☺️☺️</p><p style="margin-top:10px;font-size:.8rem;opacity:.6;">© 2026 DAV AUTOS ENTERPRISE. All rights reserved.</p></div></footer>
+<script>
+window.addEventListener('scroll',()=>{const n=document.getElementById('navbar');n.classList.toggle('scrolled',window.scrollY>50);});
+</script>
+</body>
+</html>
