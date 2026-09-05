@@ -392,6 +392,69 @@ img{max-width:100%;}
 @media (min-width:1101px){.mobile-menu-btn{display:none!important;}}
 
 
+/* Higher investment plans - See More */
+.see-more-investments{
+  margin:28px auto 0;
+  max-width:1000px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  padding:24px 26px;
+  background:linear-gradient(135deg,var(--brown-dark),var(--brown));
+  border-radius:20px;
+  box-shadow:0 14px 40px rgba(61,35,20,.12);
+}
+.see-more-label{
+  display:inline-block;
+  color:var(--gold-light);
+  font-size:.72rem;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  margin-bottom:7px;
+}
+.see-more-investments h3{
+  color:#fff;
+  font-size:1.2rem;
+  margin-bottom:5px;
+}
+.see-more-investments p{
+  color:rgba(255,255,255,.72);
+  font-size:.86rem;
+  line-height:1.55;
+}
+.see-more-btn{
+  flex:0 0 auto;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  padding:13px 22px;
+  border-radius:999px;
+  background:var(--gold);
+  color:#fff;
+  text-decoration:none;
+  font-weight:800;
+  transition:.25s ease;
+  white-space:nowrap;
+}
+.see-more-btn:hover{
+  background:var(--gold-light);
+  color:var(--brown-dark);
+  transform:translateY(-2px);
+}
+@media(max-width:600px){
+  .see-more-investments{
+    flex-direction:column;
+    align-items:stretch;
+    text-align:center;
+    padding:22px 18px;
+    gap:16px;
+  }
+  .see-more-btn{width:100%;min-height:50px;}
+}
+
 /* Investment plan selector + investor checkout */
 .investment-plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:36px;}
 .plan-card{position:relative;background:#fff;border:2px solid rgba(93,58,26,.09);border-radius:18px;padding:20px;cursor:pointer;transition:.22s ease;box-shadow:0 8px 25px rgba(61,35,20,.05);}
@@ -538,6 +601,17 @@ img{max-width:100%;}
         <a class="plan-card" href="https://dev-autos.github.io/dav-autos-website/investment-checkout.html?amount=80000000&return=4000000" aria-label="Invest ₦80,000,000 and receive ₦4,000,000 per month"><div class="plan-amount">₦80,000,000</div><div class="plan-return">Stated monthly payout<strong>₦4,000,000 / month</strong></div><span class="plan-arrow"><i class="fas fa-arrow-right"></i></span></a>
         <a class="plan-card" href="https://dev-autos.github.io/dav-autos-website/investment-checkout.html?amount=90000000&return=4500000" aria-label="Invest ₦90,000,000 and receive ₦4,500,000 per month"><div class="plan-amount">₦90,000,000</div><div class="plan-return">Stated monthly payout<strong>₦4,500,000 / month</strong></div><span class="plan-arrow"><i class="fas fa-arrow-right"></i></span></a>
         <a class="plan-card" href="https://dev-autos.github.io/dav-autos-website/investment-checkout.html?amount=100000000&return=5000000" aria-label="Invest ₦100,000,000 and receive ₦5,000,000 per month"><div class="plan-amount">₦100,000,000</div><div class="plan-return">Stated monthly payout<strong>₦5,000,000 / month</strong></div><span class="plan-arrow"><i class="fas fa-arrow-right"></i></span></a>
+      </div>
+
+      <div class="see-more-investments">
+        <div>
+          <span class="see-more-label">Higher Investment Options</span>
+          <h3>Looking to invest more than ₦100 million?</h3>
+          <p>Explore our higher-value investment plans from ₦600 million up to ₦1 billion.</p>
+        </div>
+        <a class="see-more-btn" href="high-investment.html" aria-label="See higher investment plans">
+          See More <i class="fas fa-arrow-right"></i>
+        </a>
       </div>
 
       <div class="checkout-box" id="investorCheckout" style="display:none">
