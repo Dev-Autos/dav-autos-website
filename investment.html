@@ -1,4 +1,633 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Investment & Partnership | DAV AUTOS ENTERPRISE</title>
+<meta name="description" content="Explore investment and partnership opportunities with DAV AUTOS ENTERPRISE. Enquiries are handled directly on WhatsApp.">
+<link rel="icon" type="image/png" sizes="32x32" href="./logo.png">
+<link rel="shortcut icon" href="./logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+
+        .navbar { position:fixed; top:0; left:0; right:0; z-index:1000; background:rgba(255,255,255,.95); backdrop-filter:blur(20px); padding:15px 0; box-shadow:0 2px 30px rgba(0,0,0,.08); transition:all .3s ease; }
+        .navbar.scrolled { padding:10px 0; box-shadow:0 4px 40px rgba(0,0,0,.12); }
+        .nav-container { max-width:1300px; margin:0 auto; padding:0 30px; display:flex; align-items:center; justify-content:space-between; }
+        .logo-section { display:flex; align-items:center; gap:12px; }
+        .logo-img { width:55px; height:55px; border-radius:50%; object-fit:cover; border:3px solid var(--gold); box-shadow:0 4px 15px rgba(245,166,35,.3); }
+        .logo-text { display:flex; flex-direction:column; }
+        .logo-title { font-size:1.3rem; font-weight:800; color:var(--brown); letter-spacing:1px; line-height:1.1; }
+        .logo-sub { font-size:.65rem; color:var(--gold); font-weight:600; letter-spacing:2px; text-transform:uppercase; }
+        .nav-links { display:flex; gap:28px; list-style:none; align-items:center; }
+        .nav-links a { text-decoration:none; color:var(--brown); font-weight:600; font-size:.9rem; position:relative; padding:5px 0; transition:color .3s; }
+        .nav-links a::after { content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background:var(--gold); transition:width .3s ease; }
+        .nav-links a:hover { color:var(--gold); } .nav-links a:hover::after { width:100%; }
+        .nav-cta { background:var(--gold); color:var(--white)!important; padding:10px 25px!important; border-radius:30px; font-weight:700!important; box-shadow:0 4px 15px rgba(245,166,35,.4); }
+        .nav-cta::after { display:none!important; }
+        .nav-cta:hover { background:var(--brown)!important; }
+:root {
+            --gold: #F5A623;
+            --gold-light: #FFD700;
+            --brown: #5D3A1A;
+            --brown-dark: #3D2314;
+            --brown-light: #8B6914;
+            --cream: #FFF8F0;
+            --white: #FFFFFF;
+            --dark: #1A1A1A;
+            --gray: #6B7280;
+            --light-gray: #F3F4F6;
+        }
+
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+html {
+            scroll-behavior: smooth;
+        }
+
+body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--cream);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+.container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+.section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+.section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+.section-label {
+            display: inline-block;
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+.section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--brown);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+.section-desc {
+            color: var(--gray);
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+.investment-section {
+            background: linear-gradient(135deg, #fffaf2 0%, #ffffff 55%, #f8efe3 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+.investment-section::before {
+            content: '';
+            position: absolute;
+            width: 420px;
+            height: 420px;
+            border-radius: 50%;
+            background: rgba(245,166,35,0.08);
+            top: -180px;
+            right: -140px;
+        }
+
+.investment-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+            margin-top: 45px;
+            position: relative;
+            z-index: 1;
+        }
+
+.investment-card {
+            background: rgba(255,255,255,0.94);
+            border: 1px solid rgba(93,58,26,0.1);
+            border-radius: 22px;
+            padding: 32px 28px;
+            box-shadow: 0 12px 40px rgba(61,35,20,0.07);
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+
+.investment-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(61,35,20,0.12);
+        }
+
+.investment-icon {
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: rgba(245,166,35,0.14);
+            color: var(--brown);
+            font-size: 1.35rem;
+            margin-bottom: 20px;
+        }
+
+.investment-card h3 {
+            color: var(--brown);
+            margin-bottom: 12px;
+            font-size: 1.25rem;
+        }
+
+.investment-card p {
+            color: var(--gray);
+            line-height: 1.75;
+            font-size: .98rem;
+        }
+
+.investment-cta {
+            margin: 38px auto 0;
+            max-width: 900px;
+            background: var(--brown-dark);
+            color: var(--white);
+            border-radius: 24px;
+            padding: 34px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 18px 55px rgba(61,35,20,0.16);
+        }
+
+.investment-cta h3 {
+            font-size: clamp(1.35rem, 3vw, 2rem);
+            margin-bottom: 10px;
+        }
+
+.investment-cta p {
+            color: rgba(255,255,255,.78);
+            max-width: 680px;
+            margin: 0 auto 22px;
+            line-height: 1.7;
+        }
+
+.investment-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: #25D366;
+            color: #fff;
+            padding: 14px 26px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+
+.investment-whatsapp:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(37,211,102,.25);
+        }
+
+.investment-note {
+            margin-top: 18px;
+            color: rgba(255,255,255,.58);
+            font-size: .78rem;
+            line-height: 1.6;
+        }
+
+.footer {
+            background: var(--dark);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+
+.footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+.footer-logo img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 2px solid var(--gold);
+        }
+
+.footer-logo span {
+            color: var(--white);
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+
+.heart {
+            color: var(--gold);
+        }
+
+.toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: var(--brown);
+            color: var(--white);
+            padding: 15px 30px;
+            border-radius: 12px;
+            font-weight: 600;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            z-index: 9999;
+            opacity: 0;
+            transition: all 0.4s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+
+        .investment-page { min-height: 100vh; padding-top: 110px; }
+        .back-home { display:inline-flex; align-items:center; gap:8px; margin-top:28px; text-decoration:none; color:var(--brown); font-weight:700; }
+        .back-home:hover { color:var(--gold); }
+        @media (max-width: 900px) { .nav-links { gap:16px; } .nav-links li:nth-child(6), .nav-links li:nth-child(7) { display:none; } }
+        @media (max-width: 768px) { .nav-container { padding:0 18px; } .logo-img { width:48px; height:48px; } .logo-title { font-size:1.05rem; } .nav-links { gap:12px; } .nav-links li:nth-child(n+4) { display:none; } .investment-page { padding-top:90px; } .investment-grid { grid-template-columns:1fr !important; } }
+
+
+        .investment-hero { padding: 70px 0 40px; background: radial-gradient(circle at 85% 20%, rgba(245,166,35,.18), transparent 32%), linear-gradient(135deg,#3d2314,#5d3a1a 55%,#2a180f); color:#fff; position:relative; overflow:hidden; }
+        .investment-hero::after { content:""; position:absolute; width:520px; height:520px; border:1px solid rgba(255,255,255,.12); border-radius:50%; right:-180px; top:-220px; }
+        .investment-hero-content { max-width:900px; margin:auto; text-align:center; position:relative; z-index:1; }
+        .investment-hero .section-label { color:var(--gold-light); }
+        .investment-hero h1 { color:#fff; font-family:'Playfair Display',serif; font-size:clamp(2.4rem,6vw,4.4rem); margin-bottom:18px; }
+        .investment-hero p { max-width:720px; margin:0 auto 28px; color:rgba(255,255,255,.78); line-height:1.8; font-size:1.05rem; }
+        .hero-investment-actions { display:flex; justify-content:center; gap:14px; flex-wrap:wrap; }
+        .hero-investment-actions a { text-decoration:none; display:inline-flex; align-items:center; gap:9px; padding:14px 24px; border-radius:50px; font-weight:700; transition:.25s ease; }
+        .hero-investment-actions .primary { background:var(--gold); color:#fff; box-shadow:0 10px 30px rgba(245,166,35,.28); }
+        .hero-investment-actions .primary:hover { transform:translateY(-3px); }
+        .hero-investment-actions .secondary { color:#fff; border:1px solid rgba(255,255,255,.35); }
+        .hero-investment-actions .secondary:hover { border-color:var(--gold); color:var(--gold-light); }
+        .investment-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; max-width:900px; margin:35px auto 0; }
+        .investment-stat { padding:20px; border:1px solid rgba(255,255,255,.12); border-radius:18px; background:rgba(255,255,255,.05); backdrop-filter:blur(8px); }
+        .investment-stat strong { display:block; font-size:1.55rem; color:var(--gold-light); margin-bottom:5px; }
+        .investment-stat span { color:rgba(255,255,255,.68); font-size:.84rem; }
+        .investment-steps { margin:55px auto 0; max-width:1000px; display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+        .step { text-align:center; padding:24px; border-radius:20px; background:#fff; border:1px solid rgba(93,58,26,.08); box-shadow:0 10px 30px rgba(61,35,20,.06); }
+        .step-number { width:42px; height:42px; margin:0 auto 14px; border-radius:50%; display:grid; place-items:center; background:var(--gold); color:#fff; font-weight:800; }
+        .step h3 { color:var(--brown); margin-bottom:8px; }
+        .step p { color:var(--gray); font-size:.9rem; line-height:1.65; }
+        @media(max-width:768px){ .investment-stats,.investment-steps{grid-template-columns:1fr;} .investment-hero{padding:45px 0 30px;} }
+
+
+
+.mobile-menu{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1100;opacity:0;visibility:hidden;transition:.25s ease;}
+.mobile-menu.active{display:block;opacity:1;visibility:visible;}
+.mobile-menu-content{position:absolute;top:0;right:0;width:min(310px,88vw);height:100%;background:var(--white);padding:78px 22px 25px;transform:translateX(100%);transition:transform .25s ease;overflow-y:auto;}
+.mobile-menu.active .mobile-menu-content{transform:translateX(0);}
+.mobile-menu-content ul{list-style:none;}
+.mobile-menu-content li{margin-bottom:8px;}
+.mobile-menu-content a{display:block;padding:14px 4px;color:var(--brown);text-decoration:none;font-weight:600;font-size:1rem;border-bottom:1px solid rgba(0,0,0,.06);}
+.close-menu{position:absolute;top:18px;right:18px;width:42px;height:42px;border:0;border-radius:10px;background:var(--light-gray);color:var(--brown);font-size:1.2rem;cursor:pointer;}
+@media (min-width:768px){.mobile-menu{display:none!important;}}
+
+/* Mobile-first refinements */
+/* Responsive navigation fix: keep every navigation control inside the viewport */
+.nav-container{width:100%;min-width:0;}
+.logo-section{min-width:0;flex-shrink:1;}
+.logo-text{min-width:0;}
+.nav-links{flex-shrink:1;}
+.mobile-menu-btn{display:none;flex:0 0 44px;}
+@media (max-width:1100px){
+  .nav-container{padding-left:18px;padding-right:18px;}
+  .nav-links{display:none!important;}
+  .mobile-menu-btn{display:flex!important;align-items:center;justify-content:center;width:44px;height:44px;border:0;border-radius:12px;background:var(--brown);color:#fff;font-size:1.1rem;cursor:pointer;box-shadow:0 5px 16px rgba(61,35,20,.18);}
+  .navbar{padding:10px 0;}
+}
+@media (max-width:480px){
+  .nav-container{padding-left:12px;padding-right:12px;}
+  .logo-img{width:40px;height:40px;}
+  .logo-title{font-size:.92rem;}
+  .logo-sub{font-size:.5rem;}
+  .mobile-menu-btn{width:42px;height:42px;flex-basis:42px;}
+}
+
+html,body{width:100%;max-width:100%;overflow-x:hidden;}
+img{max-width:100%;}
+.navbar{width:100%;}
+@media (max-width: 767px){
+  .navbar{padding:10px 0;}
+  .nav-container{padding:0 14px;min-height:52px;}
+  .logo-section{gap:8px;min-width:0;}
+  .logo-img{width:42px;height:42px;border-width:2px;}
+  .logo-title{font-size:.98rem;letter-spacing:.6px;}
+  .logo-sub{font-size:.55rem;letter-spacing:1.4px;}
+  .nav-links{display:none!important;}
+  .mobile-menu-btn{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:0;border-radius:12px;background:var(--brown);color:#fff;font-size:1.1rem;cursor:pointer;}
+  .investment-page{padding-top:68px;}
+  .container{width:100%;padding-left:16px;padding-right:16px;}
+  .section{padding:58px 0;}
+  .investment-hero{padding:48px 0 28px;}
+  .investment-hero-content{width:100%;}
+  .investment-hero h1{font-size:clamp(2rem,10vw,2.8rem);line-height:1.08;margin-bottom:14px;}
+  .investment-hero p{font-size:.92rem;line-height:1.65;margin-bottom:22px;}
+  .hero-investment-actions{width:100%;flex-direction:column;gap:10px;}
+  .hero-investment-actions a{width:100%;min-height:50px;padding:13px 16px;font-size:.9rem;}
+  .investment-stats{grid-template-columns:1fr!important;gap:10px;margin-top:24px;}
+  .investment-stat{padding:15px 14px;display:flex;align-items:center;justify-content:space-between;text-align:left;gap:12px;}
+  .investment-stat strong{font-size:1.15rem;margin:0;}
+  .investment-stat span{font-size:.72rem;text-align:right;}
+  .section-header{margin-bottom:30px;}
+  .section-label{font-size:.68rem;letter-spacing:2px;margin-bottom:10px;}
+  .section-title{font-size:clamp(1.8rem,8vw,2.35rem);line-height:1.15;}
+  .section-desc{font-size:.88rem;line-height:1.65;}
+  .investment-grid{grid-template-columns:1fr!important;gap:14px;margin-top:28px;}
+  .investment-card{padding:22px 19px;border-radius:17px;}
+  .investment-icon{width:48px;height:48px;font-size:1.1rem;margin-bottom:14px;}
+  .investment-card h3{font-size:1.08rem;margin-bottom:8px;}
+  .investment-card p{font-size:.86rem;line-height:1.6;}
+  .investment-steps{grid-template-columns:1fr!important;gap:12px;margin-top:32px;}
+  .step{padding:20px 17px;border-radius:16px;text-align:left;display:grid;grid-template-columns:40px 1fr;column-gap:13px;align-items:start;}
+  .step-number{width:40px;height:40px;margin:0;grid-row:span 2;}
+  .step h3{font-size:1rem;margin:1px 0 6px;}
+  .step p{font-size:.82rem;line-height:1.55;}
+  .investment-cta{margin-top:28px;padding:25px 18px;border-radius:18px;}
+  .investment-cta h3{font-size:1.3rem;line-height:1.25;}
+  .investment-cta p{font-size:.84rem;line-height:1.6;margin-bottom:18px;}
+  .investment-whatsapp{width:100%;min-height:50px;padding:13px 16px;font-size:.88rem;}
+  .investment-note{font-size:.68rem;line-height:1.5;}
+  .back-home{font-size:.84rem;margin-top:22px;}
+  .footer{padding:30px 16px;}
+  .footer-logo{gap:8px;margin-bottom:14px;}
+  .footer-logo img{width:38px;height:38px;}
+  .footer-logo span{font-size:.95rem;}
+  .footer p{font-size:.75rem;}
+}
+@media (max-width:380px){
+  .nav-container{padding:0 11px;}
+  .container{padding-left:13px;padding-right:13px;}
+  .logo-title{font-size:.9rem;}
+  .investment-hero{padding-top:42px;}
+  .investment-hero h1{font-size:1.95rem;}
+  .investment-stat span{font-size:.66rem;}
+}
+@media (min-width:1101px){.mobile-menu-btn{display:none!important;}}
+
+
+/* Higher investment plans - See More */
+.see-more-investments{
+  margin:28px auto 0;
+  max-width:1000px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  padding:24px 26px;
+  background:linear-gradient(135deg,var(--brown-dark),var(--brown));
+  border-radius:20px;
+  box-shadow:0 14px 40px rgba(61,35,20,.12);
+}
+.see-more-label{
+  display:inline-block;
+  color:var(--gold-light);
+  font-size:.72rem;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  margin-bottom:7px;
+}
+.see-more-investments h3{
+  color:#fff;
+  font-size:1.2rem;
+  margin-bottom:5px;
+}
+.see-more-investments p{
+  color:rgba(255,255,255,.72);
+  font-size:.86rem;
+  line-height:1.55;
+}
+.see-more-btn{
+  flex:0 0 auto;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  padding:13px 22px;
+  border-radius:999px;
+  background:var(--gold);
+  color:#fff;
+  text-decoration:none;
+  font-weight:800;
+  transition:.25s ease;
+  white-space:nowrap;
+}
+.see-more-btn:hover{
+  background:var(--gold-light);
+  color:var(--brown-dark);
+  transform:translateY(-2px);
+}
+@media(max-width:600px){
+  .see-more-investments{
+    flex-direction:column;
+    align-items:stretch;
+    text-align:center;
+    padding:22px 18px;
+    gap:16px;
+  }
+  .see-more-btn{width:100%;min-height:50px;}
+}
+
+/* Investment plan selector + investor checkout */
+.investment-plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:36px;}
+.plan-card{position:relative;background:#fff;border:2px solid rgba(93,58,26,.09);border-radius:18px;padding:20px;cursor:pointer;transition:.22s ease;box-shadow:0 8px 25px rgba(61,35,20,.05);}
+.plan-card:hover{transform:translateY(-3px);border-color:rgba(245,166,35,.6);}
+.plan-card:active,.plan-card:focus{border-color:var(--gold);box-shadow:0 12px 30px rgba(245,166,35,.18);outline:none;}
+.plan-card{text-decoration:none;display:block;} .plan-arrow{position:absolute;right:16px;bottom:16px;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(245,166,35,.12);color:var(--brown);}
+.plan-amount{font-size:1.35rem;font-weight:800;color:var(--brown);}
+.plan-return{margin-top:8px;color:var(--gray);font-size:.9rem;line-height:1.5;}
+.plan-return strong{display:block;color:var(--gold);font-size:1.05rem;margin-top:3px;}
+.plan-badge{position:absolute;right:12px;top:12px;font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.7px;background:rgba(245,166,35,.12);color:var(--brown);padding:5px 8px;border-radius:999px;}
+.checkout-box{margin:42px auto 0;max-width:1000px;background:#fff;border:1px solid rgba(93,58,26,.1);border-radius:24px;padding:30px;box-shadow:0 15px 45px rgba(61,35,20,.08);}
+.checkout-box h3{color:var(--brown);font-size:1.55rem;margin-bottom:8px;}
+.checkout-intro{color:var(--gray);line-height:1.65;margin-bottom:22px;}
+.selected-plan{background:var(--cream);border-radius:14px;padding:15px 17px;margin-bottom:22px;display:flex;justify-content:space-between;gap:15px;align-items:center;}
+.selected-plan span{color:var(--gray);font-size:.85rem;}.selected-plan strong{color:var(--brown);font-size:1.05rem;}
+.investor-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;}
+.form-field{display:flex;flex-direction:column;gap:7px;}.form-field.full{grid-column:1/-1;}
+.form-field label{font-size:.8rem;font-weight:700;color:var(--brown);}.form-field input,.form-field select{width:100%;border:1px solid #ddd5cc;border-radius:11px;padding:13px 14px;font:inherit;background:#fff;outline:none;}
+.form-field input:focus,.form-field select:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(245,166,35,.12);}
+.payment-choice{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px;}.payment-choice label{display:block;}.payment-choice input{position:absolute;opacity:0;}.payment-option{display:block;border:1px solid #ddd5cc;border-radius:12px;padding:14px;text-align:center;font-weight:800;color:var(--brown);cursor:pointer;}.payment-choice input:checked + .payment-option{border-color:var(--gold);background:rgba(245,166,35,.08);}
+.checkout-actions{margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;}.pay-button{border:0;cursor:pointer;background:var(--gold);color:#fff;padding:14px 22px;border-radius:999px;font-weight:800;font:inherit;}.pay-button:hover{background:var(--brown);}.whatsapp-small{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 20px;border-radius:999px;text-decoration:none;font-weight:800;color:#fff;background:#25D366;}
+.checkout-legal{margin-top:15px;color:#777;font-size:.72rem;line-height:1.55;}
+@media(max-width:900px){.investment-plans{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:600px){.investment-plans{grid-template-columns:1fr;gap:11px;margin-top:24px;}.plan-card{padding:17px;}.plan-amount{font-size:1.15rem;}.plan-return{font-size:.82rem;}.checkout-box{padding:20px 16px;border-radius:18px;margin-top:28px;}.investor-form{grid-template-columns:1fr;gap:13px;}.form-field.full{grid-column:auto;}.payment-choice{grid-template-columns:1fr;}.checkout-actions{flex-direction:column;}.pay-button,.whatsapp-small{width:100%;min-height:50px;}.selected-plan{align-items:flex-start;flex-direction:column;gap:5px;}}
+
+</style>
+</head>
+<body>
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a class="logo-section" href="https://dev-autos.github.io/dav-autos-website/" style="text-decoration:none;">
+      <img src="./logo.png" alt="DAV AUTOS Logo" class="logo-img">
+      <div class="logo-text"><span class="logo-title">DAV AUTOS</span><span class="logo-sub">Enterprise</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="https://dev-autos.github.io/dav-autos-website/investment.html" style="color:var(--gold);">Investment</a></li>
+      <li><a href="https://dev-autos.github.io/dav-autos-website/">Home</a></li>
+      <li><a href="https://dev-autos.github.io/dav-autos-website/#services">Services</a></li>
+      <li><a href="https://dev-autos.github.io/dav-autos-website/#rentals">Rentals</a></li>
+      <li><a href="https://dev-autos.github.io/dav-autos-website/#maintenance">Maintenance</a></li>
+      <li><a href="https://dev-autos.github.io/dav-autos-website/#contact">Contact</a></li>
+      <li><a href="tel:08031418977" class="nav-cta"><i class="fas fa-phone"></i> Call Now</a></li>
+    </ul>
+    <button class="mobile-menu-btn" type="button" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true" onclick="if(event.target===this)toggleMobileMenu()">
+  <div class="mobile-menu-content">
+    <button class="close-menu" type="button" aria-label="Close menu" onclick="toggleMobileMenu()"><i class="fas fa-times"></i></button>
+    <ul>
+      <li><a href="https://dev-autos.github.io/dav-autos-website/investment.html">Investment</a></li>
+      <li><a href="https://dev-autos.github.io/dav-autos-website/">Home</a></li>
+      <li><a href="https://dev-autos.github.io/dav-autos-website/#services">Services</a></li>
+      <li><a href="https://dev-autos.github.io/dav-autos-website/#rentals">Rentals</a></li>
+      <li><a href="https://dev-autos.github.io/dav-autos-website/#maintenance">Maintenance</a></li>
+      <li><a href="https://dev-autos.github.io/dav-autos-website/#contact">Contact</a></li>
+      <li><a href="tel:08031418977">Call: 08031418977</a></li>
+    </ul>
+  </div>
+</div>
+
+<main class="investment-page">
+  <section class="investment-hero">
+    <div class="container investment-hero-content">
+      <span class="section-label">DAV AUTOS ENTERPRISE</span>
+      <h1>Investment &amp; Partnership</h1>
+      <p>Explore opportunities to grow with DAV AUTOS through fleet expansion, rental operations and automotive services. Start a conversation with our team to learn about current opportunities and requirements.</p>
+      <div class="hero-investment-actions">
+        <a class="primary" href="https://wa.me/2348031418977?text=Hello%20DAV%20AUTOS%2C%20I%20am%20interested%20in%20the%20investment%20opportunity.%20Please%20send%20me%20the%20current%20investment%20and%20partnership%20details." target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> Discuss on WhatsApp</a>
+        <a class="secondary" href="https://dev-autos.github.io/dav-autos-website/"><i class="fas fa-arrow-left"></i> Back to Website</a>
+      </div>
+      <div class="investment-stats">
+        <div class="investment-stat"><strong>Fleet</strong><span>Vehicle growth opportunities</span></div>
+        <div class="investment-stat"><strong>Rental</strong><span>Transport business opportunities</span></div>
+        <div class="investment-stat"><strong>Services</strong><span>Automotive expansion opportunities</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section investment-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Where You Can Participate</span>
+        <h2 class="section-title">Build With DAV AUTOS</h2>
+        <p class="section-desc">Choose an area you would like to discuss. Specific opportunities, requirements and commercial terms are provided directly by DAV AUTOS.</p>
+      </div>
+      <div class="investment-plans" id="investmentPlans" aria-label="Investment plans">
+        <a class="plan-card" href="https://selar.com/340f46t4q1" target="_blank" rel="noopener" aria-label="Pay ₦100,000 investment plan on Selar">
+          <span class="plan-badge">Popular</span>
+                  <div class="plan-amount">₦100,000</div>
+                  <div class="plan-return">Stated monthly payout<strong>₦5,000 / month</strong></div>
+          <span class="plan-arrow"><i class="fas fa-arrow-right"></i></span>
+        </a>
+        <a class="plan-card" href="https://selar.com/5n585ji178" target="_blank" rel="noopener" aria-label="Pay ₦200,000 investment plan on Selar">
+          <span class="plan-badge"></span>
+                  <div class="plan-amount">₦200,000</div>
+                  <div class="plan-return">Stated monthly payout<strong>₦10,000 / month</strong></div>
+          <span class="plan-arrow"><i class="fas fa-arrow-right"></i></span>
+        </a>
+        <a class="plan-card" href="https://selar.com/b818r899y1" target="_blank" rel="noopener" aria-label="Pay ₦300,000 investment plan on Selar">
+          <span class="plan-badge"></span>
+                  <div class="plan-amount">₦300,000</div>
+                  <div class="plan-return">Stated monthly payout<strong>₦15,000 / month</strong></div>
+          <span class="plan-arrow"><i class="fas fa-arrow-right"></i></span>
+        </a>
+        <a class="plan-card" href="https://selar.com/48140144m8" target="_blank" rel="noopener" aria-label="Pay ₦400,000 investment plan on Selar">
+          <span class="plan-badge"></span>
+                  <div class="plan-amount">₦400,000</div>
+                  <div class="plan-return">Stated monthly payout<strong>₦20,000 / month</strong></div>
+          <span class="plan-arrow"><i class="fas fa-arrow-right"></i></span>
+        </a>
+        <a class="plan-card" href="https://selar.com/h31kc2kuv8" target="_blank" rel="noopener" aria-label="Pay ₦400,000 investment plan on Selar">
+          <span class="plan-badge"></span>
+                  <div class="plan-amount">₦500,000</div>
+                  <div class="plan-return">Stated monthly payout<strong>₦25,000 / month</strong></div>
+          <span class="plan-arrow"><i class="fas fa-arrow-right"></i></span>
+        </a>
+        <a class="plan-card" href="https://selar.com/5488egf54w" target="_blank" rel="noopener" aria-label="Pay ₦400,000 investment plan on Selar">
+          <span class="plan-badge"></span>
+                  <div class="plan-amount">₦600,000</div>
+                  <div class="plan-return">Stated monthly payout<strong>₦30,000 / month</strong></div>
+          <span class="plan-arrow"><i class="fas fa-arrow-right"></i></span>
+        </a>
+        <a class="plan-card" href="https://dev-autos.github.io/dav-autos-website/investment-checkout.html?amount=700000&return=35000" aria-label="Invest ₦700,000 and receive ₦35,000 per month"><span class="plan-badge"></span><div class="plan-amount">₦700,000</div><div class="plan-return">Stated monthly payout<strong>₦35,000 / month</strong></div><span class="plan-arrow"><i class="fas fa-arrow-right"></i></span></a>
+        <a class="plan-card" href="https://dev-autos.github.io/dav-autos-website/investment-checkout.html?amount=800000&return=40000" aria-label="Invest ₦800,000 and receive ₦40,000 per month"><span class="plan-badge"></span><div class="plan-amount">₦800,000</div><div class="plan-return">Stated monthly payout<strong>₦40,000 / month</strong></div><span class="plan-arrow"><i class="fas fa-arrow-right"></i></span></a>
+        <a class="plan-card" href="https://dev-autos.github.io/dav-autos-website/investment-checkout.html?amount=900000&return=45000" aria-label="Invest ₦900,000 and receive ₦45,000 per month"><span class="plan-badge"></span><div class="plan-amount">₦900,000</div><div class="plan-return">Stated monthly payout<strong>₦45,000 / month</strong></div><span class="plan-arrow"><i class="fas fa-arrow-right"></i></span></a>
+        <a class="plan-card" href="https://dev-autos.github.io/dav-autos-website/investment-checkout.html?amount=1000000&return=50000" aria-label="Invest ₦1,000,000 and receive ₦50,000 per month"><span class="plan-badge">Popular</span><div class="plan-amount">₦1,000,000</div><div class="plan-return">Stated monthly payout<strong>₦50,000 / month</strong></div><span class="plan-arrow"><i class="fas fa-arrow-right"></i></span></a>
+        <a class="plan-card" href="https://dev-autos.github.io/dav-autos-website/investment-checkout.html?amount=2000000&return=100000" aria-label="Invest ₦2,000,000 and receive ₦100,000 per month"><div class="plan-amount">₦2,000,000</div><div class="plan-return">Stated monthly payout<strong>₦100,000 / month</strong></div><span class="plan-arrow"><i class="fas fa-arrow-right"></i></span></a>
+        <a class="plan-card" href="https://dev-autos.github.io/dav-autos-website/investment-checkout.html?amount=3000000&return=150000" aria-label="Invest ₦3,000,000 and receive ₦150,000 per month"><div class="plan-amount">₦3,000,000</div><div class="plan-return">Stated monthly payout<strong>₦150,000 / month</strong></div><span class="plan-arrow"><i class="fas fa-arrow-right"></i></span></a>
+        <a class="plan-card" href="https://dev-autos.github.io/dav-autos-website/investment-checkout.html?amount=4000000&return=200000" aria-label="Invest ₦4,000,000 and receive ₦200,000 per month"><div class="plan-amount">₦4,000,000</div><div class="plan-return">Stated monthly payout<strong>₦200,000 / month</strong></div><span class="plan-arrow"><i class="fas fa-arrow-right"></i></span></a>
+        <a class="plan-card" href="https://dev-autos.github.io/dav-autos-website/investment-checkout.html?amount=5000000&return=250000" aria-label="Invest ₦5,000,000 and receive ₦250,000 per month"><span class="plan-badge">Popular</span><div class="plan-amount">₦5,000,000</div><div class="plan-return">Stated monthly payout<strong>₦250,000 / month</strong></div><span class="plan-arrow"><i class="fas fa-arrow-right"></i></span></a>
+        <a class="plan-card" href="https://dev-autos.github.io/dav-autos-website/investment-checkout.html?amount=6000000&return=300000" aria-label="Invest ₦6,000,000 and receive ₦300,000 per month"><div class="plan-amount">₦6,000,000</div><div class="plan-return">Stated monthly payout<strong>₦300,000 / month</strong></div><span class="plan-arrow"><i class="fas fa-arrow-right"></i></span></a>
+        <a class="plan-card" href="https://dev-autos.github.io/dav-autos-website/investment-checkout.html?amount=7000000&return=350000" aria-label="Invest ₦7,000,000 and receive ₦350,000 per month"><span class="plan-badge"></span><div class="plan-amount">₦7,000,000</div><div class="plan-return">Stated monthly payout<strong>₦350,000 / month</strong></div><span class="plan-arrow"><i class="fas fa-arrow-right"></i></span></a>
+        <a class="plan-card" href="https://dev-autos.github.io/dav-autos-website/investment-checkout.html?amount=8000000&return=400000" aria-label="Invest ₦8,000,000 and receive ₦400,000 per month"><span class="plan-badge"></span><div class="plan-amount">₦8,000,000</div><div class="plan-return">Stated monthly payout<strong>₦400,000 / month</strong></div><span class="plan-arrow"><i class="fas fa-arrow-right"></i></span></a>
+        <a class="plan-card" href="https://dev-autos.github.io/dav-autos-website/investment-checkout.html?amount=9000000&return=450000" aria-label="Invest ₦9,000,000 and receive ₦450,000 per month"><span class="plan-badge"></span><div class="plan-amount">₦9,000,000</div><div class="plan-return">Stated monthly payout<strong>₦450,000 / month</strong></div><span class="plan-arrow"><i class="fas fa-arrow-right"></i></span></a>
+        <a class="plan-card" href="https://dev-autos.github.io/dav-autos-website/investment-checkout.html?amount=10000000&return=500000" aria-label="Invest ₦10,000,000 and receive ₦500,000 per month"><div class="plan-amount">₦10,000,000</div><div class="plan-return">Stated monthly payout<strong>₦500,000 / month</strong></div><span class="plan-arrow"><i class="fas fa-arrow-right"></i></span></a>
+        <a class="plan-card" href="https://dev-autos.github.io/dav-autos-website/investment-checkout.html?amount=20000000&return=1000000" aria-label="Invest ₦20,000,000 and receive ₦1,000,000 per month"><div class="plan-amount">₦20,000,000</div><div class="plan-return">Stated monthly payout<strong>₦1,000,000 / month</strong></div><span class="plan-arrow"><i class="fas fa-arrow-right"></i></span></a>
+        <a class="plan-card" href="https://dev-autos.github.io/dav-autos-website/investment-checkout.html?amount=30000000&return=1500000" aria-label="Invest ₦30,000,000 and receive ₦1,500,000 per month"><div class="plan-amount">₦30,000,000</div><div class="plan-return">Stated monthly payout<strong>₦1,500,000 / month</strong></div><span class="plan-arrow"><i class="fas fa-arrow-right"></i></span></a>
+        <a class="plan-card" href="https://dev-autos.github.io/dav-autos-website/investment-checkout.html?amount=40000000&return=2000000" aria-label="Invest ₦40,000,000 and receive ₦2,000,000 per month"><div class="plan-amount">₦40,000,000</div><div class="plan-return">Stated monthly payout<strong>₦2,000,000 / month</strong></div><span class="plan-arrow"><i class="fas fa-arrow-right"></i></span></a>
+        <a class="plan-card" href="https://dev-autos.github.io/dav-autos-website/investment-checkout.html?amount=50000000&return=2500000" aria-label="Invest ₦50,000,000 and receive ₦2,500,000 per month"><div class="plan-amount">₦50,000,000</div><div class="plan-return">Stated monthly payout<strong>₦2,500,000 / month</strong></div><span class="plan-arrow"><i class="fas fa-arrow-right"></i></span></a>
+        <a class="plan-card" href="https://dev-autos.github.io/dav-autos-website/investment-checkout.html?amount=60000000&return=3000000" aria-label="Invest ₦60,000,000 and receive ₦3,000,000 per month"><div class="plan-amount">₦60,000,000</div><div class="plan-return">Stated monthly payout<strong>₦3,000,000 / month</strong></div><span class="plan-arrow"><i class="fas fa-arrow-right"></i></span></a>
+        <a class="plan-card" href="https://dev-autos.github.io/dav-autos-website/investment-checkout.html?amount=70000000&return=3500000" aria-label="Invest ₦70,000,000 and receive ₦3,500,000 per month"><div class="plan-amount">₦70,000,000</div><div class="plan-return">Stated monthly payout<strong>₦3,500,000 / month</strong></div><span class="plan-arrow"><i class="fas fa-arrow-right"></i></span></a>
+        <a class="plan-card" href="https://dev-autos.github.io/dav-autos-website/investment-checkout.html?amount=80000000&return=4000000" aria-label="Invest ₦80,000,000 and receive ₦4,000,000 per month"><div class="plan-amount">₦80,000,000</div><div class="plan-return">Stated monthly payout<strong>₦4,000,000 / month</strong></div><span class="plan-arrow"><i class="fas fa-arrow-right"></i></span></a>
+        <a class="plan-card" href="https://dev-autos.github.io/dav-autos-website/investment-checkout.html?amount=90000000&return=4500000" aria-label="Invest ₦90,000,000 and receive ₦4,500,000 per month"><div class="plan-amount">₦90,000,000</div><div class="plan-return">Stated monthly payout<strong>₦4,500,000 / month</strong></div><span class="plan-arrow"><i class="fas fa-arrow-right"></i></span></a>
+        <a class="plan-card" href="https://dev-autos.github.io/dav-autos-website/investment-checkout.html?amount=100000000&return=5000000" aria-label="Invest ₦100,000,000 and receive ₦5,000,000 per month"><div class="plan-amount">₦100,000,000</div><div class="plan-return">Stated monthly payout<strong>₦5,000,000 / month</strong></div><span class="plan-arrow"><i class="fas fa-arrow-right"></i></span></a>
+      </div>
+
+      <div class="see-more-investments">
+        <div>
+          <span class="see-more-label">Higher Investment Options</span>
+          <h3>Looking to invest more than ₦100 million?</h3>
+          <p>Explore our higher-value investment plans from ₦600 million up to ₦1 billion.</p>
+        </div>
+        <a class="see-more-btn" href="high-investment.html" aria-label="See higher investment plans">
+          See More <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="checkout-box" id="investorCheckout" style="display:none">
+        <h3>Choose a plan and continue</h3>
+        <p class="checkout-intro">Select the investment amount you are comfortable with, then enter your details. Your selected plan is carried into the payment step.</p>
+        <div class="selected-plan"><span>Selected investment</span><strong id="selectedPlanText">No plan selected</strong></div>
+        <form class="investor-form" id="investorForm">
+          <div class="form-field"><label for="fullName">Full name</label><input id="fullName" name="fullName" required autocomplete="name" placeholder="Your full name"></div>
+          <div class="form-field"><label for="email">Email address</label><input id="email" name="email" type="email" required autocomplete="email" placeholder="you@example.com"></div>
+          <div class="form-field"><label for="phone">Phone number</label><input id="phone" name="phone" type="tel" required autocomplete="tel" placeholder="080..." ></div>
+          <div class="form-field"><label for="state">State</label><input id="state" name="state" required autocomplete="address-level1" placeholder="Lagos, Ogun, etc."></div>
+          <div class="form-field full"><label for="address">Address</label><input id="address" name="address" required autocomplete="street-address" placeholder="Your address"></div>
+          <div class="form-field full"><label>Payment portal</label><div class="payment-choice"><label><input type="radio" name="paymentMethod" value="paystack" checked><span class="payment-option">Paystack</span></label><label><input type="radio" name="paymentMethod" value="selar"><span class="payment-option">Selar</span></label></div></div>
+          <div class="form-field full"><label><input type="checkbox" id="terms" required> I confirm that I have reviewed the investment terms and understand that the stated payout and withdrawal conditions are subject to the final written agreement.</label></div>
+          <div class="form-field full checkout-actions"><button class="pay-button" type="submit"><i class="fas fa-lock"></i> Continue to Payment</button><a class="whatsapp-small" href="https://wa.me/2348031418977?text=Hello%20DAV%20AUTOS%2C%20I%20want%20to%20make%20an%20investment%20and%20need%20payment%20details." target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> Need Help?</a></div>
+        </form>
         <p class="checkout-legal">Important: the figures displayed here are the investment terms supplied for this page and should not be treated as a guaranteed return until confirmed in a signed agreement. Withdrawal timing, payout timing, eligibility, fees and all other conditions should be stated clearly in the final agreement. A static HTML page cannot securely process payments or send verified receipts by itself; connect the form to your approved Paystack/Selar checkout and a secure backend before going live.</p>
       </div>
 
